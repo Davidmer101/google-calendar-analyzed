@@ -1,0 +1,214 @@
+
+#first-bottom-column{
+  color: darkblue;
+  font-weight: bold;
+}
+
+#productivity-percentage, #neutrality-percentage,
+#destruction-percentage {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin: 13px auto 13px auto;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 2px black solid;
+}
+#productivity-percentage {
+  background-color: lightgreen;
+  color: darkblue;
+}
+
+#neutrality-percentage {
+  background-color: lightyellow;
+  color: darkgreen;
+}
+
+#destruction-percentage {
+  background-color: red;
+  color: black;
+}
+
+#first-column {
+  float: left;
+}
+#second-column {
+  display: none;
+}
+.roundButton {
+  /* margin-top: 70%; */
+  border: 1px solid darkblue;
+  margin-top: 15%;
+  margin-bottom: 35%;
+  padding: 8px;
+  text-align: center;
+
+}
+#firstRead {
+  margin-top: 15%;
+}
+#firstColumn {
+    margin: auto;
+}
+.hero-body {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+#chooseDate {
+    width: 64%;
+    margin-bottom: 25px;
+}
+
+#navbar-dashboard {
+    background-color: rgba(222, 225, 236, 0.945);
+}
+
+/* signup */
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  /* Add a background color when the inputs get focus */
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+
+  #user-login {
+    margin-top: 15%;
+  }
+  .loginbtn {
+    width: 100%;
+    
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 15px;
+  }
+  
+  /* The Modal (background) */
+.modalpro {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: black;
+  padding-top: 50px;
+}
+  /* Modal Content/Box */
+.modal-contentpro {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  height: auto;
+}
+
+
+  /* Modal Content/Box */
+  .modal-content {
+    margin: 1% auto 15% auto; /* 2% from the top, 15% from the bottom and centered */
+    width: 35%; /* Could be more or less, depending on screen size */
+  }
+
+  /* Add padding to container elements */
+.containerpro {
+  padding: 16px;
+}
+
+  .modal-content1 {
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 10px;
+  }  
+  
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+  }
+
+  span.psw {
+    margin: auto;
+    padding-top: 16px;
+    margin-right: 0;
+  }
+
+  #authorize-view {
+    margin: 25% auto 15% auto; /* 25% from the top, 15% from the bottom and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: yellow;
+  }
+
+  #no-data-message{
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
+    color: darkblue;
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 180px;
+  top: 60px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}

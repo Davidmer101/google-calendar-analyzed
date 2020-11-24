@@ -1,0 +1,42 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": "12.18",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "browser-sync": "^2.26.12",
+    "bulma": "^0.9.1",
+    "consolidate": "^0.16.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "module": "^1.2.5",
+    "morgan": "^1.10.0",
+    "mustache": "^4.0.1",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "require": "^2.4.20",
+    "sqlite": "^4.0.15",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/sqlite3": "^3.1.6",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

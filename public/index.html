@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Analyze your Google Calendar </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body> 
+    <section id = 'homePage' style="display:block" class="hero is-link is-fullheight-with-navbar">
+      <div class="hero-head" >
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <span class="icon">
+                <i class="fas fa-history"></i>
+                </span>
+                <span class="m-0 p-0" id = 'logo'>Lastweek</span>
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a id='navbar-home' class="navbar-item is-active">
+                  Home
+                </a>
+                <a id='navbar-signup' class="navbar-item">
+                  Sign up
+                </a>
+                <a id='navbar-about' class="navbar-item">
+                  About
+                </a>
+                <span id='navbar-privacy' class="navbar-item">
+                  <a class="button is-primary is-inverted">
+                    <span class="icon">
+                      <i class="fas fa-user-secret"></i>
+                    </span>
+                    <span>Privacy Policy</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <!-- <p id="content" style="white-space: pre-wrap;"> </p>  -->
+          <!-- <pre id="content" style="white-space: pre-wrap;"></pre> --> 
+          <div class="columns">
+            <div class="column is-three-fifths">
+              <!-- class="image is-128x128" -->
+              <div id = "firstRead">
+                <div class="block">
+                  <h1 class="title">Analyze Your Calendar</h1>
+                  <h6 class="subtitle">Made with Google Calendar API</h6>
+                </div>
+                <div class="block">
+                  <p class = 'homePageParagraph'> Analyze and learn how you spent your past days, weeks, or months from your google calendar.  
+                    This web app analyzes how you spent your time by feching events from your google calendar.  
+                </p>  
+              </div>
+              </div>
+              
+            </div>
+            <div class="column">
+              <!-- log in -->
+              <div id="user-login" class="modal1">
+                <form id='login-form' class="modal-content1">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <button type="submit" class="loginbtn button is-primary">Login</button>
+                    <p id= 'login-problem'></p>
+                    <span class="psw"> <a href="#" style= "color:white">Forgot password?</a></span>
+                </form>
+              </div>
+              
+              <div id = 'authorize-view' style="display:none">
+                <div class="block">
+                  <p> Pressing the 'Authorize' button below authorizes this web app to read your google calendar events.
+                    Access to your calendar events data is terminated once you sign out. 
+                    See <a class="tag is-primary is-light"> Privacy Policy </a> to learn more:
+                </p>
+                </div> 
+                <div class="block">
+                  <button id="authorize_button" style="display: block;" class="button is-primary">
+                    <span class="icon">
+                      <i class="fab fa-google"></i>
+                    </span>
+                    <span> Authorize</span>
+                  </button>            
+                </div> 
+              </div>
+            </div>
+          </div>       
+        </div>  
+      </div>
+    </section>
+    <!-- signup/login -->
+    <div id="user-signup" class="modal">
+      <form id='signup-form' class="modal-content">
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p id='signup-direction'>Fill in this form to create an account.</p>
+          <hr>
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+    
+          <label for="password"><b>Password</b></label>
+          <input id='signup-password' type="password" placeholder="Enter Password" name="password" required>
+    
+          <label for="passwordRepeat"><b>Repeat Password</b></label>
+          <input id='signup-password-repeat' type="password" placeholder="Repeat Password" name="passwordRepeat" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+    
+          <p id= 'signup-problem'></p>
+    
+          <div class="clearfix">
+            <button id='cancel-button' type="button" class="cancelbtn button">Cancel</button>
+            <button type="submit" class="signupbtn button is-primary" >Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+     <!-- to show the dahsboard -->
+    <section id = 'dashBoard' style="display:none" class="hero is-light is-fullheight-with-navbar">
+      <div class="hero-head" id = "navbar-dashboard">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                  <span class="icon">
+                      <i class="fas fa-history"></i>
+                      </span>
+                      <span class="m-0 p-0" id = 'logo'>Lastweek</span>
+              </a>
+              <span id ='dashboard-username'></span>
+            </div>
+            <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active">
+                  Dashboard
+                </a>
+                <a class="navbar-item">
+                  Report
+                </a>
+                <a class="navbar-item">
+                  Productivity
+                </a>
+                <span class="navbar-item">
+                  <a class="button is-warning is-inverted">
+                    <span class="icon">
+                      <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                    <span id="signout_button" style="display: none;"> Sign Out </span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <nav id = 'chooseDate' class="level is-mobile bd-notification is-info">
+                <!-- Left side -->
+                <div class="level-left">
+                  <div class="level-item has-text-centered">
+                    <p class="subtitle is-5">
+                      <strong>View Your </strong> 
+                    </p>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <div class="select">
+                      <select id = 'mySelect'>
+                        <option id = 'daily' value = 'daily'>Daily</option>
+                        <option id = 'weekly' value = 'weekly'>Weekly</option>
+                        <option id= 'monthly' value = 'montly'>Monthly</option>
+                        <option id = 'custom' value = 'custom'>Custom</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <p class="subtitle is-5">
+                      <strong>Summary </strong> 
+                    </p>
+                  </div>
+                </div>
+                <!-- Right side -->
+                <div class="level-right">
+                  <div class="buttons has-addons">
+                    <button id="left-arrow" class="button"> 
+                      <span class="icon is-small">
+                        <i class="fas fa-arrow-circle-left"></i>
+                      </span>
+                   </button>
+                    <button class="button">
+                      <span id="viewing"> Monday, November 9</span>
+                    </button>
+                    <button id="right-arrow" class="button">
+                      <span class="icon is-small">
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                    </span>
+                    </button>
+                  </div>
+                </div>
+              </nav>
+              <div id='dahsboard-columns' class="columns is-mobile">
+                <div id = "no-data-message"></div>
+                <div  class="column">
+                  <div id = "first-column" class="column"></div>
+                  <div class="column">
+                    <p id = 'first-bottom-column' class="bd-notification is-danger"></p>
+                    <pre id="content" style="white-space: pre-wrap;"></pre>
+                  </div>
+                </div>
+                <div id='second-column' class="column"> 
+                  <div class = 'button roundButton column' id='calc-productivity'>Productivity
+                    <div id = 'productivity-percentage' class = 'column' style="display:none"></div>
+                    <div id = "calc-neutrality" class="column" style="display:none">neutral
+                      <div id = "neutrality-percentage" class = column >   </div>
+                      <div id = "calc-destruction" class="column" style="display:none">destruction
+                        <div id = "destruction-percentage" class = 'column'>  </div>
+                      </div>
+                  </div>
+                    </div>
+                </div>
+                <div id='third-column' class="column"> </div>
+              </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- personalized productivity pop up -->
+    <div style="display:none" id="pers-prod" class="modalpro">
+      <span onclick="document.getElementById('pers-prod').style.display='none'" id='closepp' class="close" title="Close Modal">&times;</span>
+      <form id = 'input' autocomplete="off" class="modal-contentpro" >
+        <div class="containerpro field">
+          <h1 id = 'pp-title' class = 'title'> <strong>Personalize Productivity</strong></h1>
+          <p id= 'pp-direction' class = 'subtitle'> Choose productivity level, then search and submit calendars or events</p>
+          <div class="control">
+              <input type="radio" id='productive' name="type" value="Productive" checked>
+              <label for = "productive" >Productive </label>		 
+              <input type="radio" id='neutral' name="type" value="neutral">
+              <label for = "neutral" >Neutral</label>	
+              <input type="radio" id='destructive' name="type" value="destructive">
+              <label for = "destructive" >Destructive</label>
+          </div>
+          <hr>
+          <div class="autocomplete control" style="width:300px;">
+            <input id="myInput" type="text" name="myCalendar" placeholder="Calendar Name">
+          </div>
+            <div class="content">
+              <div class="columns is-mobile">
+                <div class="column">
+                  <ul id='productive-list'> </ul>
+                </div>
+                <div class="column">
+                  <ul id='neutral-list'> </ul>
+                </div>
+                <div class="column">
+                  <ul id='destructive-list'> </ul>
+                </div>
+              
+            </div>
+          </div>
+      <button class = "button" id='myBtn' type="submit">Submit </button>
+          
+          </div>
+        </div>
+      </form>
+    </div>
+      <!--shows me the authetication status -->
+     <!-- <div id="auth-status" style="display: inline; padding-left: 25px">  </div><hr> -->
+    
+     <!--JQuery -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!--google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- axios to send and recieve from servers easily -->
+    
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- helpers by me -->
+    <script src = "date.js"></script>
+    <!-- model, view, controller -->
+    <script src = "modelCalendar.js"></script>
+    <script src = "viewCalendar.js"></script>
+    <script src = "controllerCalendar.js"></script>
+    <!--mergeing -->
+    <script type="text/javascript" src= "merging.js"> </script>
+    <!-- googleCharts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src = "charts.js"></script>
+    <!--google API -->
+    <script async defer src="https://apis.google.com/js/api.js">
+    </script>
+  </body>
+</html>
